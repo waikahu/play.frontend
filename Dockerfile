@@ -2,8 +2,8 @@
 FROM node:18.12 as build
 ENV NODE_OPTIONS=--openssl-legacy-provider
 WORKDIR /app
-COPY package*.json .
-RUN npm ci --production
+COPY package.json .
+RUN npm install --production
 COPY . .
 RUN npm run build
 

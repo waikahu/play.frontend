@@ -20,7 +20,7 @@ Then navigate to http://localhost:3000 in your browser.
 
 ## Build the docker image
 ```powershell
-$version="1.0.1"
+$version="1.0.2"
 $appname="wbplayeconomy"
 docker build -t "$appname.azurecr.io/play.frontend:$version" .
 ```
@@ -39,7 +39,7 @@ docker push "$appname.azurecr.io/play.frontend:$version"
 ## Install the Helm chart
 ```powershell
 $namespace="frontend"
-helm install frontend-client ./helm --create-namespace -n $namespace
+helm upgrade frontend-client ./helm --create-namespace --install -n $namespace
 ```
 
 ## Available Scripts
